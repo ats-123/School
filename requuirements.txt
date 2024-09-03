@@ -1,0 +1,6 @@
+Collecting freez
+  Obtaining dependency information for freez from https://files.pythonhosted.org/packages/e2/fa/2416f962fb14e86fc6828378746963197b1596ebffb77b22b4b0e3592052/freez-0.0.0-py3-none-any.whl.metadata
+  Downloading freez-0.0.0-py3-none-any.whl.metadata (957 bytes)
+Downloading freez-0.0.0-py3-none-any.whl (2.6 kB)
+Installing collected packages: freez
+Successfully installed freez-0.0.0
