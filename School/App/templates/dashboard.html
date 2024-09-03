@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Online Attendance</h2>
+
+<hr>
+<div>
+    <a href="{% url 'dashviewteach' %}"><button style="float:right; background-color: black;color: aliceblue;border-radius: 5px;padding: 7px;">Home</button></a>
+<button style="float:right; background-color: black;color: aliceblue;border-radius: 5px;padding: 7px;" onclick='window.print()'>Print</button><br><br>
+</div>
+
+<div class="studentData row">
+    <form action="{% url 'dashboard' %}" method="POST">
+        {% csrf_token %}    
+        <input name="roll_no"  class="col-sm-2" type="text" placeholder="RollNo" id="rollno" required>
+        <input name="studName"  class="col-sm-2" type="text" placeholder="Name" id="name" required>
+        <input name="studDept"   class="col-sm-2" type="text" placeholder="Department" id="department" required>
+        <input name="studPeriod"   class="col-sm-2" type="text" placeholder="Subject" id="subject" required>
+        
+        <select name="status"  class="col-sm-2">
+            <option  value="0">Present</option>
+            <option  value="1">Absent</option>
+        </select>
+
+        <button type="submit" class="btn btn-warning">Submit</button>
+        
+    
+    </form>
+  <a href="{% url 'dashviewteach' %}" >  <button class="btn btn-warning">Back</button></a>
+        
+</div>
+
+<table border="5px solid #000;">
+    <thead>
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Percentage</th>
+            <th>action</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in users %}
+        <tr>
+            <td style="padding:10px;">{{i.roll_no}}</td>
+            <td style="padding:10px;">{{i.studName}}</td>
+            <td style="padding:10px;">{{i.studDept}}</td>
+            <td style="padding:10px;">{{i.studPeriod}}</td>
+            <td style="padding:10px;">{{i.date}},{{i.time}}</td>
+            <td style="padding:10px;">{{i.status}}</td>
+            {% with number=i.percentage %}
+
+            <td style="padding:10px;">{{ number|floatformat:4|stringformat:"s"|slice:":4" }}
+            </td>
+
+            {% endwith %}
+            <td style="padding:10px;"><a href="{% url 'edit' i.pk %}">Edit</a>
+            <a href="{% url 'delete' i.pk %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

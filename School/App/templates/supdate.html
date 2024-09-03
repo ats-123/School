@@ -1,0 +1,35 @@
+{% extends 'mark.html' %}
+
+{% block content %}
+<form method="POST" action="/supdate/{{object.id}}">
+    {% csrf_token %}
+<h1> Entry Student Mark </h1>
+        
+        <fieldset>
+          
+          <!-- <legend><span class="number">1</span> Your Basic Info</legend> -->
+        
+          <label for="name">Name:</label>
+          <input type="text" value={{object.S_name}} id="name" name="user_name" required>
+          <label for="name">RollNo:</label>
+          <input type="text" value={{object.S_roll}} id="name" name="roll_no" required>
+          <label for="name">Dep:</label>
+          <input type="text" value={{object.S_dep}} id="name" name="dep_name" required>
+          <label for="name">Tamil:</label>
+          <input type="number" value={{object.tamil}} id="name" name="tamil_mark" required>
+          <label for="name">English:</label>
+          <input type="number" value={{object.english}} id="name" name="english_mark" required>
+          <label for="name">Maths:</label>
+          <input type="number" value={{object.maths}} id="name" name="maths_mark" required>
+          <label for="name">Science:</label>
+          <input type="number" value={{object.science}} id="name" name="science_mark" required>
+          <label for="name">SocialScience:</label>
+          <input type="number" value={{object.social}} id="name" name="social_mark" required>
+        
+        </fieldset>
+        
+        <button type="submit">Submit</button>
+        
+       </form>
+
+{% endblock %}

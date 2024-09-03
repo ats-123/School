@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Graph</title>
+    <style>
+        button {
+            color: aliceblue;
+            background-color: black;
+            border-radius: 5px;
+            padding: 7px;
+            padding-left: 9px;
+            padding-right: 9px;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'studash' %}"><button>Back</button></a>
+    <div style="width: 80%; margin: 0 auto;">
+        {{ graph|safe }}
+    </div>
+</body>
+</html>

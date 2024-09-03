@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/studash.css">
+</head>
+<body>
+    <div class="header"><h2 style="color: aliceblue;">Welcome {{ session }}!!!</h2>
+    <a href="{% url 'slogout' %}"><button class="btn">Logout</button></a></div>
+    <div class="body">
+    <div class="container">
+        <a href="{% url 'graph' %}"><div class="panel">
+          <div class="ring">
+           <div class="card card1"></div>
+            <div class="border">
+              <p class="title">Graph</p>
+              <div class="slide">
+                <h6 class="para">performance Analysis</h6>
+                <!-- <div class="line">
+                  <h6 class="para">OUT</h6> <i class="fa fa-plane" aria-hidden="true"></i>
+                  <h6 class="para">£849</h6>
+                </div>
+                <div class="line">
+                  <h6 class="para">RTN</h6> <i class="fa fa-plane" aria-hidden="true"></i>
+                  <h6 class="para">£659</h6>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div></a>
+        <a href="{% url 'stable' %}"><div class="panel">
+          <div class="ring">
+            <div class="card card2"></div>
+            <div class="border">
+              <p class="title">Grade</p>
+              <div class="slide">
+                <h6 class="para">Personal performance</h6>
+                <!-- <div class="line">
+                  <h6 class="para">OUT</h6> <i class="fa fa-plane" aria-hidden="true"></i>
+                  <h6 class="para">£999</h6>
+                </div>
+                <div class="line">
+                  <h6 class="para">RTN</h6> <i class="fa fa-plane" aria-hidden="true"></i>
+                  <h6 class="para">£745</h6>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+        <!-- <div class="panel">
+          <div class="ring">
+            <div class="card card3"></div>
+            <div class="border">
+              <p class="title">Egypt</p>
+              <div class="slide">
+                <h6 class="para">Latest Deals from Heathrow</h6>
+                <div class="line">
+                  <h6 class="para">OUT</h6> <i class="fa fa-plane" aria-hidden="true"></i>
+                  <h6 class="para">£399</h6>
+      
+                </div>
+                <div class="line">
+                  <h6 class="para">RTN</h6> <i class="fa fa-plane" aria-hidden="true"></i>
+                  <h6 class="para">£257</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    </div>
+</div>
+</body>
+</html>
